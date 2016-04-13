@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		15A01F9B1CBC82A9009920C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A01F9A1CBC82A9009920C6 /* AppDelegate.swift */; };
-		15A01F9D1CBC82A9009920C6 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 15A01F9C1CBC82A9009920C6 /* art.scnassets */; };
 		15A01F9F1CBC82A9009920C6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A01F9E1CBC82A9009920C6 /* GameViewController.swift */; };
 		15A01FA21CBC82A9009920C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A01FA01CBC82A9009920C6 /* Main.storyboard */; };
 		15A01FA41CBC82A9009920C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15A01FA31CBC82A9009920C6 /* Assets.xcassets */; };
 		15A01FA71CBC82A9009920C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15A01FA51CBC82A9009920C6 /* LaunchScreen.storyboard */; };
 		15A01FB21CBC82A9009920C6 /* iTetrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A01FB11CBC82A9009920C6 /* iTetrisTests.swift */; };
 		15A01FBD1CBC82A9009920C6 /* iTetrisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A01FBC1CBC82A9009920C6 /* iTetrisUITests.swift */; };
+		15A01FCB1CBC8B3F009920C6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A01FCA1CBC8B3F009920C6 /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 /* Begin PBXFileReference section */
 		15A01F971CBC82A9009920C6 /* iTetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A01F9A1CBC82A9009920C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		15A01F9C1CBC82A9009920C6 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		15A01F9E1CBC82A9009920C6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		15A01FA11CBC82A9009920C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15A01FA31CBC82A9009920C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		15A01FB81CBC82A9009920C6 /* iTetrisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTetrisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15A01FBC1CBC82A9009920C6 /* iTetrisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTetrisUITests.swift; sourceTree = "<group>"; };
 		15A01FBE1CBC82A9009920C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15A01FCA1CBC8B3F009920C6 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				15A01F9A1CBC82A9009920C6 /* AppDelegate.swift */,
-				15A01F9C1CBC82A9009920C6 /* art.scnassets */,
-				15A01F9E1CBC82A9009920C6 /* GameViewController.swift */,
+				15A01FCD1CBC8B4C009920C6 /* controllers */,
+				15A01FCC1CBC8B43009920C6 /* scene */,
 				15A01FA01CBC82A9009920C6 /* Main.storyboard */,
-				15A01FA31CBC82A9009920C6 /* Assets.xcassets */,
 				15A01FA51CBC82A9009920C6 /* LaunchScreen.storyboard */,
+				15A01FA31CBC82A9009920C6 /* Assets.xcassets */,
 				15A01FA81CBC82A9009920C6 /* Info.plist */,
 			);
 			path = iTetris;
@@ -126,6 +126,22 @@
 				15A01FBE1CBC82A9009920C6 /* Info.plist */,
 			);
 			path = iTetrisUITests;
+			sourceTree = "<group>";
+		};
+		15A01FCC1CBC8B43009920C6 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				15A01FCA1CBC8B3F009920C6 /* GameScene.swift */,
+			);
+			name = scene;
+			sourceTree = "<group>";
+		};
+		15A01FCD1CBC8B4C009920C6 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				15A01F9E1CBC82A9009920C6 /* GameViewController.swift */,
+			);
+			name = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +248,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15A01F9D1CBC82A9009920C6 /* art.scnassets in Resources */,
 				15A01FA71CBC82A9009920C6 /* LaunchScreen.storyboard in Resources */,
 				15A01FA41CBC82A9009920C6 /* Assets.xcassets in Resources */,
 				15A01FA21CBC82A9009920C6 /* Main.storyboard in Resources */,
@@ -260,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15A01FCB1CBC8B3F009920C6 /* GameScene.swift in Sources */,
 				15A01F9F1CBC82A9009920C6 /* GameViewController.swift in Sources */,
 				15A01F9B1CBC82A9009920C6 /* AppDelegate.swift in Sources */,
 			);
