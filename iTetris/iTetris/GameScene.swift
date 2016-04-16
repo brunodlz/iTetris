@@ -8,7 +8,13 @@
 
 import SpriteKit
 
+let TickLengthLevelOne = NSTimeInterval(600)
+
 class GameScene: SKScene {
+    
+    var tick:(() -> ())?
+    var tickLengthMillis = TickLengthLevelOne
+    var lastTick:NSDate?
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("NSCoder not supported")
@@ -26,4 +32,23 @@ class GameScene: SKScene {
         addChild(background)
     }
     
+    override func update(currentTime: NSTimeInterval) {
+        guard let lastTick = lastTick else {
+            return
+        }
+        
+        let timePassed = lastTick.timeIntervalSinceNow * -1000.0
+        if timePassed > tickLengthMillis {
+            self.lastTick = NSDate()
+            tick?()
+        }
+    }
+    
+    func startTicking() {
+        lastTick = NSDate()
+    }
+    
+    func stopTicking() {
+        lastTick = nil
+    }
 }
