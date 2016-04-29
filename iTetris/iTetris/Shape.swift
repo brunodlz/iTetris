@@ -78,7 +78,7 @@ class Shape: Hashable, CustomStringConvertible {
     }
     
     var hashValue: Int {
-        return blocks.reduce(0) { $0.hashValue ^ $1.hashValue }
+        return try! blocks.reduce(0) { $0.hashValue ^ $1.hashValue }
     }
     
     var description: String {
@@ -111,6 +111,63 @@ class Shape: Hashable, CustomStringConvertible {
         blocks = blockRowColumnTranslations.map({ (diff) -> Block in
             return Block(column: column + diff.columnDiff, row: row + diff.rowDiff, color: color)
         })
+    }
+
+    final func rotateBlocks(orientation: Orientation) {
+        guard let blockRownColumnTranslation:Array<(columnDiff: Int, rowDiff: Int)> = blockRownColumnPositions[orietantion] else {
+            return
+        }
+
+        for (idx, diff) in blockRownColumnTranslation.enumerate() {
+            blocks[idx].column = column + diff.columnDiff
+            blocks[idx].row = row + diff.rowDiff
+        }
+    }
+
+    final func lowerShapeByOneRow() {
+        shiftBy(0, rows: 1)
+    }
+
+    final func shiftBy(columns: Int, rows: Int) {
+        self.column += columns
+        self.row += rows
+
+        for block in blocks {
+            block.column += columns
+            block.row += rows
+        }
+    }
+
+    final func moveTo(column: Int, row: Int) {
+        self.column = column
+        self.row = row
+        rotateBlocks(orientation)
+    }
+
+    final class func random(startingColumn: Int, startingRow: Int) -> Shape {
+        switch Int(arc4random_uniform(NumShapeTypes)) {
+            case 0:
+                return SquareShape(column: startingColumn, row: startingRow)
+
+            case 1:
+                return LineShape(column: startingColumn, row: startingRow)
+
+            case 2:
+                return TShape(column: startingColumn, row: startingRow)
+
+            case 3:
+                return LShape(column: startingColumn, row: startingRow)
+
+            case 4:
+                return JShape(column: startingColumn, row: startingRow)
+
+            case 5:
+                return SShape(column: startingColumn, row: startingRow)
+
+            default:
+                return ZShape(column: startingColumn, row: startingRow)
+        }
+
     }
 }
 
