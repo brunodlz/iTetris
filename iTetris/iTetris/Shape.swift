@@ -44,7 +44,7 @@ enum Orientation: Int, CustomStringConvertible {
     }
 }
 
-let numShapeTypes: UInt32 = 7
+let NumShapeTypes: UInt32 = 7
 
 let FirstBlockIdx:Int  = 0
 let SecondBlockIdx:Int = 1
@@ -78,7 +78,7 @@ class Shape: Hashable, CustomStringConvertible {
     }
     
     var hashValue: Int {
-        return try! blocks.reduce(0) { $0.hashValue ^ $1.hashValue }
+        return blocks.reduce(0) { $0.hashValue ^ $1.hashValue }
     }
     
     var description: String {
@@ -114,7 +114,7 @@ class Shape: Hashable, CustomStringConvertible {
     }
 
     final func rotateBlocks(orientation: Orientation) {
-        guard let blockRownColumnTranslation:Array<(columnDiff: Int, rowDiff: Int)> = blockRownColumnPositions[orietantion] else {
+        guard let blockRownColumnTranslation:Array<(columnDiff: Int, rowDiff: Int)> = blockRowColumnPositions[orientation] else {
             return
         }
 

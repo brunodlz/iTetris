@@ -51,7 +51,7 @@ class Block: NSHashTable {
     // properties
     var column: Int
     var row: Int
-    var sprite: SKShapeNode?
+    var sprite: SKSpriteNode?
     
     var sprintName: String {
         return color.sprintName
