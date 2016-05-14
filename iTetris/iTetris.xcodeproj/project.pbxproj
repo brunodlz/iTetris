@@ -146,13 +146,11 @@
 			children = (
 				15A01F9A1CBC82A9009920C6 /* AppDelegate.swift */,
 				151A9BD81CC28B4D0079C44C /* Array2D.swift */,
+				15245CA21CD4418800A078BE /* Swiftris.swift */,
 				15A01FCD1CBC8B4C009920C6 /* controllers */,
 				15A01FCC1CBC8B43009920C6 /* scene */,
-				15A01FA01CBC82A9009920C6 /* Main.storyboard */,
-				15A01FA51CBC82A9009920C6 /* LaunchScreen.storyboard */,
-				15A01FA31CBC82A9009920C6 /* Assets.xcassets */,
-				15A01FA81CBC82A9009920C6 /* Info.plist */,
-				15245CA21CD4418800A078BE /* Swiftris.swift */,
+				15CF3C471CD459F900A4DD54 /* View */,
+				15CF3C461CD459DC00A4DD54 /* Supporting Files */,
 			);
 			path = iTetris;
 			sourceTree = "<group>";
@@ -191,6 +189,24 @@
 				15A01F9E1CBC82A9009920C6 /* GameViewController.swift */,
 			);
 			name = controllers;
+			sourceTree = "<group>";
+		};
+		15CF3C461CD459DC00A4DD54 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				15A01FA31CBC82A9009920C6 /* Assets.xcassets */,
+				15A01FA81CBC82A9009920C6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		15CF3C471CD459F900A4DD54 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15A01FA01CBC82A9009920C6 /* Main.storyboard */,
+				15A01FA51CBC82A9009920C6 /* LaunchScreen.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -44,7 +44,7 @@ enum BlockColor: Int, CustomStringConvertible {
     }
 }
 
-class Block: NSHashTable {
+class Block: Hashable, CustomStringConvertible {
     // constants
     let color: BlockColor
     
@@ -57,11 +57,11 @@ class Block: NSHashTable {
         return color.sprintName
     }
     
-    override var hashValue: Int {
+    var hashValue: Int {
         return self.column ^ self.row
     }
     
-    override var description: String {
+    var description: String {
         return "\(color) : [\(column),\(row)]"
     }
     
@@ -69,12 +69,6 @@ class Block: NSHashTable {
         self.column = column
         self.row = row
         self.color = color
-        
-        super.init(coder: NSCoder())!
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 

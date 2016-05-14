@@ -26,6 +26,9 @@ class GameViewController: UIViewController {
         scene.scaleMode = .AspectFill
         
         scene.tick = didTick
+      
+        swiftris = Swiftris()
+        swiftris.beginGame()
         
         skView.presentScene(scene)
         
